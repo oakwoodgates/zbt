@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "zbt",
+    "homepage": "http://github.com/oakwoodgates/zbt",
+    "description": "For Brigit",
+    "version": "0.0.1",
+    "author": "WPGuru4u",
+    "authoremail": "wpguru4u@gmail.com",
+    "authorurl": "http://wpguru4u.com",
+    "license": "GPLv2",
+    "slug": "zbt",
+    "classname": "ZBT",
+    "classprefix": "ZBT_",
+    "prefix": "zbt",
+    "year": 2016
+  }
+}
