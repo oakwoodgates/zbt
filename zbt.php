@@ -3,7 +3,7 @@
  * Plugin Name: zbt
  * Plugin URI:  http://github.com/oakwoodgates/zbt
  * Description: For Brigit
- * Version:     0.0.1
+ * Version:     0.0.2
  * Author:      WPGuru4u
  * Author URI:  http://wpguru4u.com
  * Donate link: http://github.com/oakwoodgates/zbt
@@ -14,7 +14,7 @@
  * @link http://github.com/oakwoodgates/zbt
  *
  * @package zbt
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 /**
@@ -74,7 +74,7 @@ final class ZBT {
 	 * @var  string
 	 * @since  0.0.1
 	 */
-	const VERSION = '0.0.1';
+	const VERSION = '0.0.2';
 
 	/**
 	 * URL of plugin directory
