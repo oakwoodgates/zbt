@@ -51,7 +51,7 @@ class ZBT_Gravityforms {
 		//create settings on position 225 (right after HTML content area)
 		if ( $position == 225 ) { ?>
 			<li class="add_image_button field_setting">
-				<input type="button" class="button upload_image_button" value="<?php _e("Insert Image", "giih'")?>" onclick="triggerMedia(jQuery(this).parent().siblings('.content_setting').find('textarea'));"/>
+				<input type="button" class="button upload_image_button" value="<?php _e("Insert Image", "zbt'")?>" onclick="triggerMedia(jQuery(this).parent().siblings('.content_setting').find('textarea'));"/>
 			</li>
 			<?php
 		}
