@@ -43,7 +43,7 @@
 /**
  * Autoloads files with classes when needed
  *
- * @since  NEXT
+ * @since  0.0.1
  * @param  string $class_name Name of the class being requested.
  * @return void
  */
@@ -64,7 +64,7 @@ spl_autoload_register( 'zbt_autoload_classes' );
 /**
  * Main initiation class
  *
- * @since  NEXT
+ * @since  0.0.1
  */
 final class ZBT {
 
@@ -72,7 +72,7 @@ final class ZBT {
 	 * Current version
 	 *
 	 * @var  string
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	const VERSION = '0.0.1';
 
@@ -80,7 +80,7 @@ final class ZBT {
 	 * URL of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	protected $url = '';
 
@@ -88,7 +88,7 @@ final class ZBT {
 	 * Path of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	protected $path = '';
 
@@ -96,7 +96,7 @@ final class ZBT {
 	 * Plugin basename
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	protected $basename = '';
 
@@ -104,14 +104,14 @@ final class ZBT {
 	 * Singleton instance of plugin
 	 *
 	 * @var ZBT
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	protected static $single_instance = null;
 
 	/**
 	 * Instance of ZBT_Gravityforms
 	 *
-	 * @since NEXT
+	 * @since 0.0.1
 	 * @var ZBT_Gravityforms
 	 */
 	protected $gravityforms;
@@ -119,7 +119,7 @@ final class ZBT {
 	/**
 	 * Creates or returns an instance of this class.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return ZBT A single instance of this class.
 	 */
 	public static function get_instance() {
@@ -133,7 +133,7 @@ final class ZBT {
 	/**
 	 * Sets up our plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 */
 	protected function __construct() {
 		$this->basename = plugin_basename( __FILE__ );
@@ -144,7 +144,7 @@ final class ZBT {
 	/**
 	 * Attach other plugin classes to the base plugin class.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function plugin_classes() {
@@ -155,7 +155,7 @@ final class ZBT {
 	/**
 	 * Add hooks and filters
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function hooks() {
@@ -166,7 +166,7 @@ final class ZBT {
 	/**
 	 * Activate the plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function _activate() {
@@ -178,7 +178,7 @@ final class ZBT {
 	 * Deactivate the plugin
 	 * Uninstall routines should be in uninstall.php
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function _deactivate() {}
@@ -186,7 +186,7 @@ final class ZBT {
 	/**
 	 * Init hooks
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function init() {
@@ -200,7 +200,7 @@ final class ZBT {
 	 * Check if the plugin meets requirements and
 	 * disable it if they are not present.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return boolean result of meets_requirements
 	 */
 	public function check_requirements() {
@@ -221,7 +221,7 @@ final class ZBT {
 	/**
 	 * Deactivates this plugin, hook this function on admin_init.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function deactivate_me() {
@@ -231,7 +231,7 @@ final class ZBT {
 	/**
 	 * Check that all plugin requirements are met
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return boolean True if requirements are met.
 	 */
 	public static function meets_requirements() {
@@ -244,7 +244,7 @@ final class ZBT {
 	/**
 	 * Adds a notice to the dashboard if the plugin requirements are not met
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @return void
 	 */
 	public function requirements_not_met_notice() {
@@ -257,7 +257,7 @@ final class ZBT {
 	/**
 	 * Magic getter for our object.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @param string $field Field to get.
 	 * @throws Exception Throws an exception if the field is invalid.
 	 * @return mixed
@@ -279,7 +279,7 @@ final class ZBT {
 	/**
 	 * Include a file from the includes directory
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @param  string $filename Name of the file to be included.
 	 * @return bool   Result of include call.
 	 */
@@ -294,7 +294,7 @@ final class ZBT {
 	/**
 	 * This plugin's directory
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @param  string $path (optional) appended path.
 	 * @return string       Directory and path
 	 */
@@ -307,7 +307,7 @@ final class ZBT {
 	/**
 	 * This plugin's url
 	 *
-	 * @since  NEXT
+	 * @since  0.0.1
 	 * @param  string $path (optional) appended path.
 	 * @return string       URL and path
 	 */
@@ -322,7 +322,7 @@ final class ZBT {
  * Grab the ZBT object and return it.
  * Wrapper for ZBT::get_instance()
  *
- * @since  NEXT
+ * @since  0.0.1
  * @return ZBT  Singleton instance of plugin class.
  */
 function zbt() {
