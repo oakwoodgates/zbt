@@ -1,0 +1,129 @@
+li#field_16_12 input, li#field_16_13 input {
+    max-width: 400px;
+    width: 100%;
+}
+li#field_16_34 {
+    display: none;
+}
+.gform_wrapper.bt_quiz_wrapper .gf_progressbar {
+	border: 3px solid #582564;
+	border-radius: 0;
+	padding:0;
+    background-color: #fff;
+}
+
+.gform_wrapper.bt_quiz_wrapper .gf_progressbar_percentage {
+	border-radius: 0;
+	font-family: inherit;
+	height: 33px;
+	font-size: 18px!important;
+	background: transparent;
+}
+.gform_wrapper.bt_quiz_wrapper .gf_progressbar:after {
+	border-radius: 0;
+	background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.gform_wrapper.bt_quiz_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+	text-transform: uppercase;
+	font-family: inherit;
+}
+.gform_wrapper.bt_quiz_wrapper h3.gform_title {
+	color: #582564;
+	box-shadow: 0 3px 0 #862783;
+    text-transform: uppercase;
+}
+.gform_wrapper.bt_quiz_wrapper .gform_page_footer .button.gform_next_button {
+	background-color: #862783;
+}
+.gform_wrapper.bt_quiz_wrapper .gform_page_footer .button.gform_previous_button {
+	background-color: #582564;
+}
+.gform_wrapper.bt_quiz_wrapper input[type=radio] {
+	display: none !important;
+}
+.gform_wrapper.bt_quiz_wrapper input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #66c9c3;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.gform_wrapper.bt_quiz_wrapper input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #66c9c3;
+    font-size: 32px;
+    text-align: center;
+    line-height: 9px;
+    border-width: 2px;
+}
+/*
+.gform_wrapper.bt_quiz_wrapper input[type=checkbox] {
+	display: none !important;
+}
+.gform_wrapper.bt_quiz_wrapper input[type=checkbox] + label:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #66c9c3;
+    vertical-align: middle;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+.gform_wrapper.bt_quiz_wrapper input[type=checkbox]:checked + label:before {
+	content:"\2714";
+	color:white;
+    color: #66c9c3;
+	text-align:center;
+	line-height:15px;
+}
+*/
+@media only screen and (min-width: 690px) {
+	body .gform_wrapper.bt_quiz_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html {
+		width: 33%;
+		float: right;
+		/* margin-top: -105px; */
+		/* margin-bottom: 30px; */
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0;
+	}
+	body .gform_wrapper.bt_quiz_wrapper div.gform_body ul.gform_fields li.gfield.zbt_quiz_large_left {
+		float: left;
+		width: 65%;
+		padding: 0;
+		clear: none;
+	}
+	.gform_wrapper.bt_quiz_wrapper .gf_progressbar_wrapper {
+		width:65%;
+	}
+	.gform_wrapper.bt_quiz_wrapper h3.gform_title {
+		font-size: 2.2em;
+		width: 65%;
+		float: left;
+		margin-bottom: 30px!important;
+	}
+	body .gform_wrapper.bt_quiz_wrapper ul li.gfield.gfield_html img {
+		max-width: 100%!important;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+}
+@media only screen and (max-width: 1000px) and (min-width: 690px){
+	.container {
+	    max-width: 90%!important;
+	}
+}
+
