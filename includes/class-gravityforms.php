@@ -42,8 +42,10 @@ class ZBT_Gravityforms {
 	 * @return void
 	 */
 	public function hooks() {
-		add_action( 'gform_field_standard_settings', array( $this, 'standard_settings' ), 10, 2 );
-		add_action( 'gform_editor_js', array( $this, 'gform_editor_js' ) );
+	//	add_action( 'gform_field_standard_settings', array( $this, 'standard_settings' ), 10, 2 );
+	//	add_action( 'gform_editor_js', array( $this, 'gform_editor_js' ) );
+		add_action( 'gform_enqueue_scripts_16', array( $this, 'enqueue_css' ), 10, 2 );
+		add_action( 'gform_after_submission_16', array( $this, 'gf_16_to_op' ), 10, 2 );
 	}
 
 	// adding image button to html field
@@ -87,7 +89,7 @@ class ZBT_Gravityforms {
 				  // We set multiple to false so only get one image from the uploader
 				  attachment = file_frame.state().get('selection').first().toJSON();
 
-				  htmltag = '<img src="'+attachment.url+'"/>';
+				  htmltag = '<img src="'+attachment.url+'">';
 
 				  InsertVariable( target.attr('id'), null, htmltag  );
 
@@ -107,4 +109,49 @@ class ZBT_Gravityforms {
 		</script>
 		<?php
 	}
+
+	function enqueue_css( $form, $is_ajax ) {
+		wp_enqueue_style( 'zbt_gf_quiz', ZBT::url( 'assets/gf_cbtr_quiz.css' ) );
+	}
+
+	function gf_16_to_op( $entry, $form ) {
+		$email = rgar( $entry, '13' );
+		$score = rgar( $entry, '34' );
+		$first = rgar( $entry, '12.3' );
+		$op_id = '';
+
+		$data = array(
+			'email'		=> $email,
+			'firstname' => $first,
+		);
+		// Update/Create a contact if the email record
+		// does/not exist in Ontraport
+		$op = wontrapi_update_or_create_contact( $email, $data );
+
+		// if the contact was created new in Ontraport,
+		// get the id of the new user from OP
+		$op_id = ( ! empty( $op->data->id ) ) ? $op->data->id : $op_id;
+		// if contact was updated (or failed?) it
+		// does not return the id from Ontraport
+		if ( ! $op_id ){
+			$op = '';
+			// get the contact from OP by email
+			$op = wontrapi_get_contacts_by( 'email', $email );
+			// get the id of the user in OP
+			if ( ! empty( $op->data[0]->id ) ){
+				$op_id = $op->data[0]->id;
+			} else {
+				// something messed up
+				return;
+			}
+		}
+
+		// conditions
+		$cbtr = ( $score < 16 ? '639' : ( $score < 24 ? '640' : '641' ) );
+		// add tags to user
+		wontrapi_add_tags_to_contacts( array( $op_id ), array( '638', $cbtr ) );
+
+	}
 }
+
+
