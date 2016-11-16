@@ -3,7 +3,7 @@
  * Plugin Name: zbt
  * Plugin URI:  http://github.com/oakwoodgates/zbt
  * Description: For Brigit
- * Version:     0.0.2
+ * Version:     0.0.3
  * Author:      WPGuru4u
  * Author URI:  http://wpguru4u.com
  * Donate link: http://github.com/oakwoodgates/zbt
